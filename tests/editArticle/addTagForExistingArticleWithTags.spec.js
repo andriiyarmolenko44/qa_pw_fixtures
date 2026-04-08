@@ -17,7 +17,7 @@ test('Add tag for an article with tag', async ({
 }) => {
   await homePage.clickNewArticleLink();
 
-  await createNewArticle(page, articleWithOneTag);
+  await createNewArticle(createArticlePage, articleWithOneTag);
   await createArticlePage.clickPublishArticleButton();
 
   await viewArticlePage.assertArticleTitleIsVisible(articleWithOneTag.title);

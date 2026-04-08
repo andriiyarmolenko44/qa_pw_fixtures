@@ -17,7 +17,7 @@ test('Add tag for an article without tags', async ({
 }) => {
   await homePage.clickNewArticleLink();
 
-  await createNewArticle(page, articleWithoutTags);
+  await createNewArticle(createArticlePage, articleWithoutTags);
   await createArticlePage.clickPublishArticleButton();
 
   await viewArticlePage.assertArticleTitleIsVisible(articleWithoutTags.title);

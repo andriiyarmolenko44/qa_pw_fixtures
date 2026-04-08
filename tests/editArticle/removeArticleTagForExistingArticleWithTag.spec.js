@@ -7,7 +7,6 @@ test.beforeEach(async ({ page, user }) => {
 });
 
 test('Remove article tag', async ({
-  page,
   createArticlePage,
   viewArticlePage,
   editArticlePage,
@@ -16,7 +15,7 @@ test('Remove article tag', async ({
 }) => {
   await homePage.clickNewArticleLink();
 
-  await createNewArticle(page, articleWithOneTag);
+  await createNewArticle(createArticlePage, articleWithOneTag);
   await createArticlePage.clickPublishArticleButton();
 
   await viewArticlePage.assertArticleTitleIsVisible(articleWithOneTag.title);
